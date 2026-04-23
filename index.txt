@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PureGlow Cleaning Services</title>
+  <meta name="description" content="Professional home and office cleaning services with trusted staff, flexible scheduling, and spotless results." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter',sans-serif;
+      background:#f4f8fb;
+      color:#1e2430;
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1150px,92%);margin:0 auto}
+    .btn{
+      display:inline-block;
+      padding:14px 24px;
+      border-radius:999px;
+      font-weight:600;
+      transition:.25s ease;
+    }
+    .btn-primary{background:#1e88e5;color:#fff}
+    .btn-primary:hover{background:#1876c8}
+    .btn-secondary{
+      border:1px solid rgba(30,136,229,.2);
+      color:#1e88e5;
+      background:#fff;
+    }
+    .btn-secondary:hover{background:#eef6ff}
+    header{
+      position:fixed;top:0;left:0;width:100%;z-index:1000;
+      background:rgba(244,248,251,.88);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+    .nav{
+      min-height:80px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo{
+      font-family:'Playfair Display',serif;
+      font-size:1.65rem;
+      font-weight:700;
+    }
+    .logo span{color:#1e88e5}
+    .nav-links{display:flex;gap:24px}
+    .nav-links a:hover{color:#1e88e5}
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding-top:100px;
+      background:
+        linear-gradient(rgba(244,248,251,.8), rgba(244,248,251,.92)),
+        url('https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:30px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-block;
+      padding:8px 14px;
+      background:#e8f3ff;
+      color:#1e88e5;
+      border-radius:999px;
+      font-size:.84rem;
+      margin-bottom:20px;
+    }
+    h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(3rem,6vw,5.2rem);
+      line-height:1.02;
+      margin-bottom:18px;
+    }
+    .hero p{
+      max-width:590px;
+      color:#566171;
+      margin-bottom:28px;
+      font-size:1.05rem;
+    }
+    .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .stat{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 10px 26px rgba(0,0,0,.04);
+    }
+    .stat strong{display:block;font-size:1.15rem}
+    .stat span{color:#65707f;font-size:.92rem}
+    .hero-card{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:0 18px 50px rgba(0,0,0,.06);
+    }
+    .hero-card h3{font-size:1.5rem;margin-bottom:12px}
+    .hero-card p{color:#5f6b7a;margin-bottom:18px}
+    .hero-card ul{list-style:none;display:grid;gap:12px}
+    .hero-card li{color:#536071}
+    .section{padding:96px 0}
+    .section-title{
+      text-align:center;
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.1rem,4vw,3.2rem);
+      margin-bottom:16px;
+    }
+    .section-subtitle{
+      max-width:760px;
+      text-align:center;
+      margin:0 auto 52px;
+      color:#617081;
+    }
+    .about-grid,.contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:26px;
+      align-items:center;
+    }
+    .card{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:28px;
+      padding:32px;
+      box-shadow:0 14px 36px rgba(0,0,0,.05);
+    }
+    .card h3{margin-bottom:14px}
+    .card p{color:#5f6b7a;margin-bottom:14px}
+    .feature-list{display:grid;gap:14px;margin-top:18px}
+    .feature{
+      display:flex;gap:12px;align-items:flex-start
+    }
+    .feature-icon{
+      width:28px;height:28px;border-radius:50%;
+      background:#e8f3ff;color:#1e88e5;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;flex-shrink:0;
+    }
+    .about-grid img{
+      border-radius:28px;
+      min-height:500px;
+      object-fit:cover;
+    }
+    .services-grid,.testimonial-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .service-card,.testimonial{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 12px 30px rgba(0,0,0,.04);
+    }
+    .service-card h3{margin-bottom:10px}
+    .service-card p{color:#617081;margin-bottom:14px}
+    .price{color:#1e88e5;font-weight:700}
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .gallery-grid img{
+      border-radius:22px;
+      height:280px;
+      width:100%;
+      object-fit:cover;
+    }
+    .stars{color:#1e88e5;margin-bottom:12px}
+    .testimonial p{color:#5f6b7a;margin-bottom:14px}
+    .hours-row{
+      display:flex;justify-content:space-between;
+      padding:10px 0;border-bottom:1px solid rgba(0,0,0,.06);
+      color:#5f6b7a;
+    }
+    .contact-info{display:grid;gap:12px;margin-bottom:20px;color:#5f6b7a}
+    .cta-box{
+      text-align:center;
+      background:#fff;
+      border:1px solid rgba(30,136,229,.12);
+      border-radius:30px;
+      padding:50px 28px;
+      box-shadow:0 16px 40px rgba(0,0,0,.05);
+    }
+    footer{padding:28px 0;text-align:center;color:#687382}
+    @media (max-width:950px){
+      .hero-grid,.about-grid,.contact-grid,.services-grid,.testimonial-grid,.gallery-grid{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .hero-stats{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">Pure<span>Glow</span></a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn btn-secondary">Get Quote</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Trusted Cleaning Professionals</div>
+        <h1>Spotless Spaces. Reliable Service. Zero Stress.</h1>
+        <p>
+          PureGlow Cleaning Services helps busy homeowners and businesses keep their spaces fresh, clean, and ready for whatever the day brings.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Request a Quote</a>
+          <a href="#services" class="btn btn-secondary">View Services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>100+</strong><span>Happy clients served</span></div>
+          <div class="stat"><strong>Flexible</strong><span>Scheduling options</span></div>
+          <div class="stat"><strong>Trusted</strong><span>Professional team</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Why this is the $250 version</h3>
+        <p>This sample feels more established and helps a cleaning business look more trustworthy right away.</p>
+        <ul>
+          <li>• Better branding and overall polish</li>
+          <li>• More trust-building sections</li>
+          <li>• Testimonials and gallery included</li>
+          <li>• Stronger overall customer experience</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">Cleaning That Feels Professional From First Click</h2>
+      <p class="section-subtitle">This version is designed for businesses that want to look more established and drive more trust.</p>
+      <div class="about-grid">
+        <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?auto=format&fit=crop&w=1200&q=80" alt="Cleaner wiping a counter">
+        <div class="card">
+          <h3>Dependable service with a polished brand feel</h3>
+          <p>
+            PureGlow is positioned as a dependable, trustworthy cleaning company that makes booking simple and results consistent.
+          </p>
+          <p>
+            This sample adds more visual depth, more sections, and more credibility than a basic starter site.
+          </p>
+          <div class="feature-list">
+            <div class="feature"><div class="feature-icon">✓</div><div>Clear service breakdown</div></div>
+            <div class="feature"><div class="feature-icon">✓</div><div>Gallery to show quality and professionalism</div></div>
+            <div class="feature"><div class="feature-icon">✓</div><div>Testimonials to build trust fast</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <p class="section-subtitle">A more polished service presentation makes the business feel organized and premium.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Recurring Home Cleaning</h3>
+          <p>Weekly, biweekly, or monthly service that keeps your home fresh and manageable.</p>
+          <div class="price">$120+</div>
+        </div>
+        <div class="service-card">
+          <h3>Deep Cleaning</h3>
+          <p>A more detailed top-to-bottom refresh for kitchens, bathrooms, and living areas.</p>
+          <div class="price">$200+</div>
+        </div>
+        <div class="service-card">
+          <h3>Move In / Move Out</h3>
+          <p>Get the space ready for a fresh start with a more detailed cleaning service.</p>
+          <div class="price">$250+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="container">
+      <h2 class="section-title">Recent Results</h2>
+      <p class="section-subtitle">Gallery sections help the company feel more credible and visually polished.</p>
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=1000&q=80" alt="Clean kitchen">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80" alt="Clean bedroom">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1000&q=80" alt="Clean living room">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="container">
+      <h2 class="section-title">What Clients Say</h2>
+      <p class="section-subtitle">Testimonials are one of the easiest ways to make a business feel more trustworthy online.</p>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>Our house looked amazing and the whole process was easy from start to finish.</p>
+          <strong>— Jessica M.</strong>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>Very professional, on time, and the results were exactly what we needed.</p>
+          <strong>— Mark R.</strong>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>The website made them look so trustworthy and the service matched it.</p>
+          <strong>— Lauren T.</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Hours & Contact</h2>
+      <p class="section-subtitle">Keep the next step easy so customers can reach out fast.</p>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Business Hours</h3>
+          <div class="hours-row"><span>Monday</span><span>8 AM – 6 PM</span></div>
+          <div class="hours-row"><span>Tuesday</span><span>8 AM – 6 PM</span></div>
+          <div class="hours-row"><span>Wednesday</span><span>8 AM – 6 PM</span></div>
+          <div class="hours-row"><span>Thursday</span><span>8 AM – 6 PM</span></div>
+          <div class="hours-row"><span>Friday</span><span>8 AM – 6 PM</span></div>
+          <div class="hours-row"><span>Saturday</span><span>9 AM – 2 PM</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        </div>
+        <div class="card">
+          <h3>Request a Quote</h3>
+          <div class="contact-info">
+            <div><strong>Phone:</strong> (555) 212-4545</div>
+            <div><strong>Email:</strong> hello@pureglowcleaning.com</div>
+            <div><strong>Location:</strong> Tampa, FL</div>
+          </div>
+          <a href="#" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="section-title" style="margin-bottom:10px;">Professional cleaning starts with trust</h2>
+        <p class="section-subtitle" style="margin-bottom:24px;">This version is ideal for a cleaning company that wants to look more established and convert more visitors.</p>
+        <a href="#contact" class="btn btn-primary">Request Service</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2026 PureGlow Cleaning Services. All rights reserved.</div>
+  </footer>
+</body>
+</html>
